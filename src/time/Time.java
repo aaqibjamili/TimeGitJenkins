@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  * for the testing exercise with JUnit
  *  Winter 2021
  */
-public class Time
+public class Time                                       //commit and push
 {
 	public static void main(String[] args) {
 		 int totalSeconds = getTotalSeconds("Github 10:10:10");
