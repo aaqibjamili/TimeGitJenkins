@@ -41,7 +41,7 @@ void testGetMilliSeconds() {
 	{
 	assertThrows(
 	 StringIndexOutOfBoundsException.class, 
-	 ()-> {Time.getTotalSeconds("10:00:90");});
+	 ()-> {Time.getTotalSeconds("10:00");});
 	}
 	
 	/*
@@ -74,8 +74,8 @@ void testGetMilliSeconds() {
 	public void testGetTotalMinutesBad() 
 	{
 	assertThrows(
-	 StringIndexOutOfBoundsException.class, 
-	 ()-> {Time.getTotalMinutes("06:62:12");});
+	 NumberFormatException.class, 
+	 ()-> {Time.getTotalMinutes("06:0:00");});
 	}
 	
 	/*
@@ -104,8 +104,8 @@ void testGetMilliSeconds() {
 	public void testGetTotalHoursBad() 
 	{
 	assertThrows(
-	 StringIndexOutOfBoundsException.class, 
-	 ()-> {Time.getTotalHours("13:00:00");});
+	 NumberFormatException.class, 
+	 ()-> {Time.getTotalHours("3:00:00");});
 	}
 	
 	/*

@@ -19,44 +19,45 @@ import javax.swing.JOptionPane;
  * for the testing exercise with JUnit
  *  Winter 2021
  */
-public class Time                                       //commit and push
+public class Time
 {
 	public static void main(String[] args) {
-		 int totalSeconds = getTotalSeconds("Github 10:10:10");
+		 int totalSeconds = getTotalSeconds("10:10:10");
+		 System.out.println("GitHub\n");
 		 System.out.println("Total Seconds = "+totalSeconds);
 		
-
-
-		try
-		{
-			//modifying the input for millisecond value
-		String time = JOptionPane.showInputDialog(null,
-			"Enter a time in the format hh:mm:ss:ms", "Enter Time",
-			JOptionPane.QUESTION_MESSAGE);
-		
-	//	int totalSeconds = getTotalSeconds(time);
-	//	JOptionPane.showMessageDialog(null, totalSeconds, "Total Seconds",
-	//		JOptionPane.INFORMATION_MESSAGE);
-		}
-		catch(StringIndexOutOfBoundsException e)
-		{
-			//modifying the Error message for millisecond
-			JOptionPane.showMessageDialog(null,
-					"You entered the time in the wrong format.\n" +
-					"Please enter the time in the form hh:mm:ss:ms",
-					"Invalid Time", JOptionPane.ERROR_MESSAGE);
-		}
-		catch(NumberFormatException e)
-		{
-			JOptionPane.showMessageDialog(null,
-					"You entered an invalid time.\nPlease enter numbers only.",
-					"Invalid Time",	JOptionPane.ERROR_MESSAGE);
-		}
-		catch(Exception e)
-		{
-			System.out.println("An unexpected Exception occurred");
-		}
 	}
+
+//		try
+//		{
+//			//modifying the input for millisecond value
+//		String time = JOptionPane.showInputDialog(null,
+//			"Enter a time in the format hh:mm:ss:ms", "Enter Time",
+//			JOptionPane.QUESTION_MESSAGE);
+//		
+//		int totalSeconds = getTotalSeconds(time);
+//	JOptionPane.showMessageDialog(null, totalSeconds, "Total Seconds",
+//		JOptionPane.INFORMATION_MESSAGE);
+//		}
+//		catch(StringIndexOutOfBoundsException e)
+//		{
+//			//modifying the Error message for millisecond
+//			JOptionPane.showMessageDialog(null,
+//					"You entered the time in the wrong format.\n" +
+//					"Please enter the time in the form hh:mm:ss:ms",
+//					"Invalid Time", JOptionPane.ERROR_MESSAGE);
+//		}
+//		catch(NumberFormatException e)
+//		{
+//			JOptionPane.showMessageDialog(null,
+//					"You entered an invalid time.\nPlease enter numbers only.",
+//					"Invalid Time",	JOptionPane.ERROR_MESSAGE);
+//		}
+//		catch(Exception e)
+//		{
+//			System.out.println("An unexpected Exception occurred");
+//		}
+//	}
 
 	//adding the millisecond method
 	public static int getTotalSeconds(String time)throws NumberFormatException, StringIndexOutOfBoundsException {
@@ -64,7 +65,7 @@ public class Time                                       //commit and push
 		int hours = getTotalHours(time);
 		//we will eventually multiply the hours by 3600 + the minutes by 60 + the seconds
 		int minutes = getTotalMinutes (time);
-		int seconds = getSeconds(time) + (getMilliSeconds(time)/1000);
+		int seconds = getSeconds(time); //+ (getMilliSeconds(time)/1000);
 		return hours * 3600 + minutes * 60 + seconds;
 	}
 	
@@ -97,6 +98,9 @@ public class Time                                       //commit and push
 		}
           return  Integer.parseInt(time.substring(9,12));
 	}
+//
+//	
+	
 	
 }
 
